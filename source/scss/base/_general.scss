@@ -16,6 +16,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  &.is-menu-open {
+    overflow: hidden;
+  }
 }
 
 ::selection {
@@ -231,6 +235,11 @@ ol {
 
   &--expand {
     grid-column: span 2;
+
+    // Mobile
+    @media (max-width: $xs) {
+      grid-column: span 1;
+    }
   }
 }
 
@@ -419,7 +428,7 @@ ol {
     //###################################################
 
     &:focus + label {
-      outline: 1px solid  $cgp-secondary;
+      outline: 1px solid $cgp-secondary;
     }
 
     //###################################################

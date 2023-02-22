@@ -3,10 +3,20 @@
 //###################################################
 
 .image-text {
+  // Tablet P and Down
+  @media (max-width: $sm) {
+    padding-top: 24px;
+  }
+
   &__item {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
+
+    // Tablet P and Down
+    @media (max-width: $sm) {
+      grid-template-columns: 1fr;
+    }
 
     //###################################################
 
@@ -18,6 +28,12 @@
         @media (max-width: $lg) {
           padding-right: 30px;
           padding-left: 0;
+        }
+
+        // Tablet P and Down
+        @media (max-width: $sm) {
+          order: initial;
+          padding: 30px 0;
         }
       }
 
@@ -45,6 +61,13 @@
     height: 0;
     padding-bottom: 70%;
 
+    // Tablet P and Down
+    @media (max-width: $sm) {
+      padding-bottom: 56.24%;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
     //###################################################
 
     &-inner {
@@ -55,6 +78,11 @@
       top: 0;
       right: 0;
 
+      @media (max-width: $sm) {
+        left: 0;
+        right: initial;
+        width: 100%;
+      }
       //###################################################
 
       img {
@@ -77,6 +105,11 @@
     // Lg and Down
     @media (max-width: $lg) {
       padding: 30px 0 30px 30px;
+    }
+
+    // Tablet P and Down
+    @media (max-width: $sm) {
+      padding: 30px 0;
     }
   }
 }

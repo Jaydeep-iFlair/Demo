@@ -143,7 +143,29 @@ document.addEventListener("click", (evt) => {
 // 4.0 - Close dropdown for mobile
 // *******************************************************************************
 
-document.querySelector(".dropdown__close").addEventListener("click", (ev) => {
-  const dropdownParent = ev.target.closest(".dropdown");
-  dropdownParent.classList.remove("is-open");
-});
+if (document.querySelector(".dropdown__close")) {
+  document.querySelector(".dropdown__close").addEventListener("click", (ev) => {
+    const dropdownParent = ev.target.closest(".dropdown");
+    dropdownParent.classList.remove("is-open");
+  });
+}
+
+// *******************************************************************************
+
+const hamburgerEle = document.querySelector(".hamburger-wrapper");
+
+if (hamburgerEle) {
+  hamburgerEle.addEventListener("click", () => {
+    const currentState = hamburgerEle.getAttribute("data-state");
+
+    if (!currentState || currentState === "closed") {
+      hamburgerEle.setAttribute("data-state", "opened");
+      hamburgerEle.setAttribute("aria-expanded", "true");
+    } else {
+      hamburgerEle.setAttribute("data-state", "closed");
+      hamburgerEle.setAttribute("aria-expanded", "false");
+    }
+
+    document.body.classList.toggle('is-menu-open');
+  });
+}
