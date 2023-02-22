@@ -1,0 +1,34 @@
+//###################################################
+// Gallery scss
+//###################################################
+
+.gallery {
+  margin-bottom: 80px;
+
+  //###################################################
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 24px;
+  }
+
+  //###################################################
+
+  &__item {
+    position: relative;
+    height: 0;
+    padding-bottom: 100%;
+
+    //###################################################
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
